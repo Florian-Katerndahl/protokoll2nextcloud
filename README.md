@@ -1,5 +1,5 @@
 <div style="width: 100px; height: 100px; position: absolute; right: 10px; top: 10px">
-<img src="assets/logo.svg" alt="FSI Logo">
+<img src="assets/logo.svg" alt="FSI Logo" align="right">
 </div>
 
 # protokoll2nextcloud
