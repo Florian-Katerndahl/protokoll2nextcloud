@@ -9,7 +9,9 @@
 
 This package is used internally by the [FSI Geographie](https://fsigeographiefuberlin.wordpress.com/) of the FU Berlin to automatically upload any 
 protocols of our plena to Nextcloud. The goal, however, is to keep this package as general as possible so that any E-Mail attachment can be converted to PDF 
-and uploaded to Nextcloud folder. 
+and uploaded to Nextcloud folder.
+
+This repo/package replaces an older implementation whose archived repo can be found [here](https://github.com/Florian-Katerndahl/Mails2FuBox).
 
 ## Installation
 
