@@ -21,7 +21,7 @@ it's run on a server via a cronjob.
 This package depends on `poetry`, `pandoc` and `lualatex`. Please install them before continuing. On Ubuntu, the steps are as following:
 
 1. `curl -sSL https://install.python-poetry.org | python3 -`
-2. `sudo apt update && sudo apt install -y pandoc texlive-latex-base`
+2. `sudo apt update && sudo apt install -y pandoc texlive`
 
 Adjust your system's `PATH` variables accordingly.
 
