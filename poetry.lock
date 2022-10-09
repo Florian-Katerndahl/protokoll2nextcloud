@@ -27,15 +27,22 @@ python-versions = ">=3.5"
 
 [[package]]
 name = "pandoc"
-version = "2.2"
+version = "2.3a0"
 description = "Pandoc Documents for Python"
 category = "main"
 optional = false
 python-versions = "*"
+develop = false
 
 [package.dependencies]
 plumbum = "*"
 ply = "*"
+
+[package.source]
+type = "git"
+url = "https://github.com/boisgera/pandoc.git"
+reference = "master"
+resolved_reference = "99e85d2821e42d7da9c21a6f508adce920040b31"
 
 [[package]]
 name = "plumbum"
@@ -111,7 +118,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "381d08dc80f50aba8fbaee83fc8c7c519f1dcbc035b9e60577c9aa180b292395"
+content-hash = "d1bbd2fb3d5db8b3fa4532dad50a3a373f3fc3fbffa85bf677bc4db60d0bfe55"
 
 [metadata.files]
 certifi = [
@@ -126,9 +133,7 @@ idna = [
     {file = "idna-3.4-py3-none-any.whl", hash = "sha256:90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"},
     {file = "idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
 ]
-pandoc = [
-    {file = "pandoc-2.2.tar.gz", hash = "sha256:d063ee252f2761010f16cf3a14912ad9245187c24c56f4b1ad9696e104fe6e1e"},
-]
+pandoc = []
 plumbum = [
     {file = "plumbum-1.8.0-py3-none-any.whl", hash = "sha256:0f6b59c8a03bfcdddd1efc04a126062663348e892ce7ddef49ec60e47b9e2c09"},
     {file = "plumbum-1.8.0.tar.gz", hash = "sha256:f1da1f167a2afe731a85de3f56810f424926c0a1a8fd1999ceb2ef20b618246d"},
