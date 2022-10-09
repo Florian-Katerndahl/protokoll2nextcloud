@@ -30,7 +30,7 @@ class Messages:
 
             with requests.session() as s:
                 s.auth = (user, password)
-                s.put(nc_webdav_url + nc_destination_path + "Protokoll vom " + datetime.strftime(delivery_date, "%d.%m.%Y") + ".pdf",
+                s.put(nc_webdav_url + nc_destination_path + "Protokoll von " + datetime.strftime(delivery_date, "%Y-%m-%d") + ".pdf",
                       files={"file": file_to_upload})
 
         os.unlink(f.name)
