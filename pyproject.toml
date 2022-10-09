@@ -12,7 +12,7 @@ exclude = ["application/main.py"]
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.28.1"
-pandoc = "^2.2"
+pandoc = { git = "https://github.com/boisgera/pandoc.git", branch = "master" }
 regex = "^2022.9.13"
 
 [build-system]
