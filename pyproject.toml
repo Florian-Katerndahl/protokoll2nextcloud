@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "protokoll2nextcloud"
 version = "0.1.0"
-description = ""
+description = "Query attachments from E-Mails and upload them to a Nextcloud instance"
 license = "GPL-3.0-only"
 authors = ["Florian Katerndhal <florian@katerndahl.com>"]
 readme = "README.md"
@@ -12,7 +12,7 @@ exclude = ["application/main.py"]
 python = "^3.8"
 requests = "^2.28.1"
 pandoc = "^2.2"
-SQLAlchemy = "^1.4.41"
+regex = "^2022.9.13"
 
 [build-system]
 requires = ["poetry-core"]
