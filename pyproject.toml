@@ -5,6 +5,7 @@ description = "Query attachments from E-Mails and upload them to a Nextcloud ins
 license = "GPL-3.0-only"
 authors = ["Florian Katerndhal <florian@katerndahl.com>"]
 readme = "README.md"
+repository = "https://github.com/Florian-Katerndahl/protokoll2nextcloud"
 packages = [{include = "protokoll2nextcloud"}]
 exclude = ["application/main.py"]
 
