@@ -27,7 +27,7 @@ Afterwards, you can clone the repository and use poetry to install the package. 
 tested but *should* work in some form or another.
 
 ```bash
-git clone htpps://github.com/Florian-Katerndahl/protokoll2nextcloud.git
+git clone https://github.com/Florian-Katerndahl/protokoll2nextcloud.git
 cd protokoll2nextcloud
 poetry install
 ```
