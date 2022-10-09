@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "protokoll2nextcloud"
-version = "v1.0.0"
+version = "v1.0.2"
 description = "Query attachments from E-Mails and upload them to a Nextcloud instance"
 license = "GPL-3.0-only"
 authors = ["Florian Katerndhal <florian@katerndahl.com>"]
