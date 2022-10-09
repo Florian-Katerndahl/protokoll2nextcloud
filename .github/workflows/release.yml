@@ -2,6 +2,7 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - '*.*.*'
@@ -11,7 +12,8 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     strategy:
-      python-version: ["3.8", "3.9", "3.10"]
+      matrix:
+        python-version: ["3.8", "3.9", "3.10"]
 
     steps:
       - name: Checkout code
