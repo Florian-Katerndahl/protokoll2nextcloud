@@ -31,7 +31,7 @@ class MetaMail:
         delivery_date: float = math.floor(datetime.timestamp(datetime.strptime(delivery_date_string, "%a, %d %b %Y %H:%M:%S %z")))
         unix_now: float = math.floor(datetime.timestamp(datetime.now()))
 
-        return (unix_now - delivery_date) > max_age_seconds if max_age_seconds >= 0 else False
+        return (unix_now - delivery_date) > max_age_seconds if max_age_seconds > 0 else False
 
 
     def connect(self):
