@@ -1,4 +1,4 @@
 [virtualenvs]
 create = true
 in-project = true
-options.system-site-packages = true # otherwise, pip is missing? Shouldn't happen, happened here...
+options.system-site-packages = false
