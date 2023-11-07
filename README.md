@@ -11,10 +11,7 @@ This package is used internally by the [FSI Geographie](https://fsigeographiefub
 protocols of our plena to Nextcloud. The goal, however, is to keep this package as general as possible so that any E-Mail attachment can be converted to PDF 
 and uploaded to Nextcloud folder.
 
-This repo/package replaces an older implementation whose archived repo can be found [here](https://github.com/Florian-Katerndahl/Mails2FuBox). And while 
-this new approach offers a substantially cleaner code base, it is slightly more naive by assuming the file upload worked correctly and does not check the 
-HTTP-status code returned. The now archived repo did check if an upload was successful. However, no more than a warning was printed out which is useless if 
-it's run on a server via a cronjob. 
+This repo/package replaces an older implementation whose archived repo can be found [here](https://github.com/Florian-Katerndahl/Mails2FuBox).
 
 ## Installation
 
