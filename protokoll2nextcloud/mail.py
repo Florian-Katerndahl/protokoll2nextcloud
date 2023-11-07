@@ -33,10 +33,12 @@ class MetaMail:
 
         return (unix_now - delivery_date) > max_age_seconds if max_age_seconds > 0 else False
 
-
     def connect(self):
         self.connection = IMAP4_SSL(self.server)
-        self.connection.login(self.user, self.password)
+        err, _ = self.connection.login(self.user, self.password)
+        if err != "OK":
+            self.connection.close()
+            exit(1)
 
         self.connection.select("INBOX", readonly=True)
 
