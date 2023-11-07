@@ -23,14 +23,19 @@ class Messages:
             if message_value.get("subtype") != "pdf":
                 trick_pandoc_extensions = message_value.get("filename").split(".")[-1]
                 raw_attachment = message_value.get("file-content")
-                converted_attachment = pandoc.read(raw_attachment, format=trick_pandoc_extensions if trick_pandoc_extensions != "txt" else "t2t")
-                file_to_upload = pandoc.write(converted_attachment, file=f.name, format="latex", options=["--pdf-engine=lualatex"])
+                converted_attachment = pandoc.read(raw_attachment,
+                                                   format=trick_pandoc_extensions if trick_pandoc_extensions != "txt" else "t2t")
+                file_to_upload = pandoc.write(converted_attachment, file=f.name, format="latex",
+                                              options=["--pdf-engine=lualatex"])
             else:
                 file_to_upload = message_value.get("file-content")
 
             with requests.session() as s:
                 s.auth = (user, password)
-                s.put(nc_webdav_url + nc_destination_path + "Protokoll von " + datetime.strftime(delivery_date, "%Y-%m-%d") + ".pdf",
-                      files={"file": file_to_upload})
+                r = s.put(nc_webdav_url + nc_destination_path + "Protokoll von " + datetime.strftime(delivery_date,
+                                                                                                     "%Y-%m-%d") + ".pdf",
+                          files={"file": file_to_upload})
+                if not r.ok:
+                    break
 
         os.unlink(f.name)
