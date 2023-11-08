@@ -57,7 +57,7 @@ class MetaMail:
             email_message = email.message_from_bytes(data[0][1], _class=EmailMessage)
             if not MetaMail.fuzzy_match_subject(email_message.get("Subject"), subject, 5):
                 continue
-            if MetaMail.mail_to_old(email_message.get("delivery-date"), max_age):
+            if MetaMail.mail_to_old(email_message.get("delivery-date") or email_message.get("Date"), max_age):
                 continue
             for message_part in email_message.walk():
                 if message_part.get_content_disposition() != "attachment":
@@ -71,7 +71,7 @@ class MetaMail:
                     meta_dict.update({
                             message_id: {
                                 #'subject': email_message.get('Subject'),
-                                'date': email_message.get("delivery-date"),
+                                'date': email_message.get("delivery-date") or email_message.get("Date"),
                                 'filename': message_part.get_filename(),
                                 'subtype': message_part.get_content_subtype(),
                                 'file-content': message_part.get_payload(decode=True)
