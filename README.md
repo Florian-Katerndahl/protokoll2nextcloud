@@ -37,7 +37,7 @@ Run the script manually or set up a cronjob via `crontab -e` (**needs absolute p
 
 ```bash
 poetry run python application/main.py -h
-usage: main.py [-h] --imap IMAP --user USER --password IMAP_PASSWD --sender SENDER_ADDRESS --subject SUBJECT
+usage: main.py [-h] --imap IMAP --user USER --nc-user NEXTCLOUD_USER --password IMAP_PASSWD --sender SENDER_ADDRESS --subject SUBJECT
                --nc-password NEXTCLOUD_APP_PASSWD --nc-url NEXTCLOUD_WEBDAV_URL --nc-dest NEXTCLOUD_DESTINATION_FOLDER
                [--max-age MAX_AGE]
 
@@ -45,6 +45,8 @@ options:
   -h, --help            show this help message and exit
   --imap IMAP           Hostname of the IMAP server.
   --user USER           Username to use when logging in to the IMAP server and Nextcloud instance.
+  --nc-user NEXTCLOUD_USER
+                        Username to use when logging in to Nextcloud, should from the IMAP server.
   --password IMAP_PASSWD
                         Password to use when logging in to the IMAP server.
   --sender SENDER_ADDRESS
