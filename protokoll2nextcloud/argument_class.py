@@ -6,6 +6,7 @@ from typing import List
 class ArgumentClass:
     imap: List[str]
     user: List[str]
+    nextcloud_user: List[str]
     imap_passwd: List[str]
     sender_address: List[str]
     subject: List[str]

@@ -6,6 +6,8 @@ from protokoll2nextcloud.messages import Messages
 parser = argparse.ArgumentParser()
 parser.add_argument("--imap", required=True, dest="imap", type=str, help="Hostname of the IMAP server.")
 parser.add_argument("--user", required=True, dest="user", type=str, help="Username to use when logging in to the IMAP server and Nextcloud instance.")
+parser.add_argument("--nc-user", required=False, dest="nextcloud_user", default="", type=str, help="Username to use when logging in to Nextcloud, should "
+                                                                                                    " from the IMAP server")
 parser.add_argument("--password", required=True, dest="imap_passwd", type=str, help="Password to use when logging in to the IMAP server.")
 parser.add_argument("--sender", required=True, dest="sender_address", type=str, help="E-Mail address to search for when querying mails.")
 parser.add_argument("--subject", required=True, dest="subject", type=str, help="Mail subject to search for, currently allows for five typos.")
@@ -28,7 +30,7 @@ mailer.query_sender(sender=args.get("sender_address"))
 messages_to_process = mailer.query_attachments(subject=args.get("subject"), max_age=args.get("max_age"))
 
 messages = Messages(messages_to_process)
-messages.normalize_and_upload(args.get("user"), args.get("nextcloud_app_passwd"),
+messages.normalize_and_upload(args.get("nextcloud_user") or args.get("user"), args.get("nextcloud_app_passwd"),
                               args.get("nextcloud_webdav_url"), args.get("nextcloud_destination_folder"))
 
 del mailer
